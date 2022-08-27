@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scaled=1">
+
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <title>BatePapoUol</title>
+    </head>
+    
+    <body>
+        <header>
+            <div class="menu-topo">
+                <img src="./images/logo 1.png">
+                <ion-icon name="people"></ion-icon>
+            </div>
+        </header>
+
+        <ul class="chat">
+            <!--
+            <li class="mensagem">             
+                <div class="tempo"> (09:21:45) ${arr[i].time} </div>
+                <div class="usuario"> Igor: ${arr[i].from}</div>
+                <spam> para ${arr[i].to}: </spam>
+                <div class="texto"> Bom dia a todes! ${arr[i].text}</div>            
+            </li>
+            -->
+
+        </ul>
+
+        <footer>
+            <div class="enviar-mensagem">
+                <input placeholder="Escreva aqui..." class="texto-escrito">
+                <ion-icon name="paper-plane-outline" onclick="mandarMensagem()"></ion-icon>
+            </div>
+        </footer>
+
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>
