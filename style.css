@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
 *{
     box-sizing: content-box;
 }
 
+strong{
+    font-family: bolder;
+    font-weight: 400;
+}
+
 body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
     background-color: #E5E5E5;
     display: flex;
     flex-direction: column;
@@ -77,6 +86,10 @@ li {
     margin-right: 5px;
 }
 
+.destinatario{
+    margin-right: 5px;
+}
+
 
 footer{
     width: 100%;
@@ -99,7 +112,7 @@ footer{
 }
 
 input{
-    width: 100%;
+    width: 82%;
     height: 84%;
     font-size: 15px;
     margin-left: 5px;

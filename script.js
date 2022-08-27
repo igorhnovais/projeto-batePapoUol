@@ -61,29 +61,29 @@ function renderizarMensagens(){
         if (arr[i].type === "status"){ // entrar na sala
         ul.innerHTML += `
             <li class="mensagem cinza">             
-                <spam class="tempo"> ${arr[i].time} </spam>
-                <spam class="usuario"> ${arr[i].from}: </spam>   
-                <spam class="texto"> ${arr[i].text} </spam>         
+                <spam class="tempo"> <strong> (${arr[i].time}) </strong></spam>
+                <spam class="usuario"> ${arr[i].from}  </spam>   
+                <spam class="texto"> <strong> ${arr[i].text} </strong> </spam>         
             </li>`
         }
 
-        if(arr[i].type === "message"){ // mandar msg
+        if(arr[i].type === "message"){ 
             ul.innerHTML += `
             <li class="mensagem">             
-                <spam class="tempo"> ${arr[i].time} </spam>
-                <spam class="usuario"> ${arr[i].from}: </spam>
-                <spam> para ${arr[i].to}: </spam>
-                <spam class="texto"> ${arr[i].text} </spam>            
+                <spam class="tempo"> <strong> (${arr[i].time}) </strong> </spam>
+                <spam class="usuario">  ${arr[i].from}  </spam>
+                <spam class="destinatario"> <strong> para </strong> ${arr[i].to}: </spam>
+                <spam class="texto"> <strong>${arr[i].text} </strong></spam>            
             </li>`
         }
 
-        if(arr[i].type === "private-message"){
-            ul.innerHTML += `
+        if(arr[i].type === "private_message"){
+            ul.innerHTML += `huihuoh
             <li class="mensagem rosa">             
-                <spam class="tempo"> ${arr[i].time} </spam>
-                <spam class="usuario"> ${arr[i].from}: </spam>
-                <spam> para ${arr[i].to}: </spam>
-                <spam class="texto"> ${arr[i].text} </spam>            
+                <spam class="tempo"> <strong> (${arr[i].time}) </strong> </spam>
+                <spam class="usuario"> ${arr[i].from} ig </spam>
+                <spam class="destinatario"> <strong> para </strong> ${arr[i].to}:</spam>
+                <spam class="texto"> <strong> ${arr[i].text} </shdgauysgdiastrong></spam>            
             </li>`
         } 
     }    
@@ -96,7 +96,7 @@ function scroll(){
 
     const ultimaMensagem = document.querySelector('.chat li:last-child');
     
-    ultimaMensagem.scrollIntoView();
+    ultimaMensagem.scrollIntoView({behavior:"smooth"});
 }
  
 setInterval(scroll, 1000);
@@ -158,4 +158,13 @@ function saiServidor(){
 }
 
 // -- ja vericamos o status
+// -- enviar a mensagem com a tecla enter
+
+document.addEventListener("keypress", enviaEnter);
+
+function enviaEnter(botao){
+    if(botao.key === "Enter"){
+        mandarMensagem();
+    }
+}
 
