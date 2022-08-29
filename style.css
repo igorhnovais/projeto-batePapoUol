@@ -66,8 +66,7 @@ li {
     margin-top: 5px;
     padding: 10px 0;
     border-radius: 2px;
-    
-    word-break: break-all;
+    word-wrap: break-word;
 }
 
 .cinza{
@@ -80,16 +79,16 @@ li {
 
 .tempo{
     margin: 0 10px;
+    color: #AAAAAA;
+}
+
+.texto{
+    margin-left: 10px;
 }
 
 .usuario{
     margin-right: 5px;
 }
-
-.destinatario{
-    margin-right: 5px;
-}
-
 
 footer{
     width: 100%;

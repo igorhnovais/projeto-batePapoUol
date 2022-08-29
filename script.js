@@ -35,7 +35,7 @@ function deuErroUsuario(){
 function pegarDados(){
     const promessa = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
     promessa.then(mensagemRecebidas);
-    promessa.catch(mensagemFudeo);
+    promessa.catch(mensagemNegada);
 }
 
 setInterval(pegarDados, 3000); // -- para recarregar o site 
@@ -47,8 +47,8 @@ function mensagemRecebidas(resposta){
     renderizarMensagens();
 }
 
-function mensagemFudeo(){
-    console.log('mensagemfudeo')
+function mensagemNegada(){
+    console.log('mensagemfudeo');
 }
 
 function renderizarMensagens(){
@@ -78,7 +78,7 @@ function renderizarMensagens(){
         }
 
         if(arr[i].type === "private_message"){
-            ul.innerHTML += `huihuoh
+            ul.innerHTML += `
             <li class="mensagem rosa">             
                 <spam class="tempo"> <strong> (${arr[i].time}) </strong> </spam>
                 <spam class="usuario"> ${arr[i].from} ig </spam>
@@ -119,7 +119,7 @@ function mandarMensagem(){
     promessa.then(pegarDados);
     promessa.catch(falhaMensagemEnviada);
 
-    elementotexto.value = ''
+    elementotexto.value = '';
 
     renderizarMensagens();
 }
@@ -127,7 +127,7 @@ function mandarMensagem(){
 function falhaMensagemEnviada(erro){
     console.log(erro);
     alert('falha ao enviar a mensagem');
-    window.location.reload()
+    window.location.reload();
 }
 
 // -- mandamos as mensagens
